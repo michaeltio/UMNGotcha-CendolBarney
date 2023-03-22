@@ -19,7 +19,7 @@
     <div id="bungkus" class="vstack gap-2">
       
         <button onclick="openNew()" class="menuBtn">New Game</button>
-        <button class="menuBtn">Load Game</button>
+        <button onclick="openLoad()" class="menuBtn">Load Game</button>
         <button onclick="openCred()" class="menuBtn">Credits</button>
       
         <div id="popupNew" class="window">
@@ -35,6 +35,19 @@
             </div>
             <button onclick="closeNew()" class="windowBtn">Back</button>
             <button onclick="startGame()" class="windowBtn">Create</button>
+        </div>
+        
+        <div id="popupLoad" class="window">
+            <div id="popupLoadContent" class="vstack windowContent">
+                <h2 class="mt-4">Load Game</h2>
+                <div id="avatarSelection" class="vstack mt-4">
+                    <p>contoh load 1</p>
+                    <p>contoh load 2</p>
+                    <p>contoh load 3</p>
+                </div>
+            </div>
+            <button onclick="closeLoad()" class="windowBtn">Back</button>
+            <button onclick="startGame()" class="windowBtn">Play</button>
         </div>
         
         

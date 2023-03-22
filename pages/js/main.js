@@ -30,6 +30,22 @@ function closeCred(){
     $(".menuBtn").height("75px"); 
 }
 
+function openLoad(){
+    $("#popupLoad").width("60vh");
+    $("#popupLoad").height("70vh");
+
+    $(".menuBtn").width(0);
+    $(".menuBtn").height(0);
+}
+
+function closeLoad(){
+    $("#popupLoad").width(0);
+    $("#popupLoad").height(0);
+
+    $(".menuBtn").width("200px");
+    $(".menuBtn").height("75px"); 
+}
+
 function startGame(){
     window.location.href = "game-lobby.html";
 }
