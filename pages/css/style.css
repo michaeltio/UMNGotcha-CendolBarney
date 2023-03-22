@@ -7,11 +7,21 @@
     font-family: "pixelFont";
 }
 
+body{
+    background-color: lime;
+}
+
 #bungkus{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#mainTitle{
+    margin-bottom: 10vh;
+    color: white;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .window{
