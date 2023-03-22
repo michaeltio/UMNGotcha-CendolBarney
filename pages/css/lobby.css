@@ -1,0 +1,29 @@
+#stats{
+    overflow: hidden;
+    background-color: gainsboro;
+    height: 20vh;
+    width: 35vw;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+#stats table tr td p{
+    text-align: center;
+}
+
+#avatar{
+    height: 50vh;
+    width: 50vw;
+    border: 1px solid black;
+}
+
+.actionsBtn{
+    width: 15vw;
+    height: 5vh;
+    text-align: center;
+    margin: 5px;
+}
+#greeting,#name,#levelText{
+    text-align: center;
+}

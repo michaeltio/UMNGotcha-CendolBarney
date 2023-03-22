@@ -12,15 +12,15 @@ function closeNew(){
 
     $(".menuBtn").width("200px");
     $(".menuBtn").height("75px");
-
+    
     $("#errorMsg").css("visibility", "hidden");
-
+    $('#nameInput').val(""); 
 }
 
 function openCred(){
     $("#popupCred").width("60vh");
     $("#popupCred").height("70vh");
-
+    
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
 }
@@ -28,7 +28,7 @@ function openCred(){
 function closeCred(){
     $("#popupCred").width(0);
     $("#popupCred").height(0);
-
+    
     $(".menuBtn").width("200px");
     $(".menuBtn").height("75px"); 
 }
@@ -36,7 +36,7 @@ function closeCred(){
 function openLoad(){
     $("#popupLoad").width("60vh");
     $("#popupLoad").height("70vh");
-
+    
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
 }
@@ -51,12 +51,15 @@ function closeLoad(){
 
 function startGame(){
     var name = $('#nameInput').val()
+    
     if(name!=""){
-        window.location.href = "game-lobby.html";
+        localStorage.setItem("nameGiven", name);
         $("#errorMsg").css("visibility", "hidden");
+        window.location.href = "game-lobby.html";
     }
     else{
         $("#errorMsg").css("visibility", "visible");
     }
 }
+
 
