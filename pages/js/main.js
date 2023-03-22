@@ -10,13 +10,13 @@ function closeNew(){
     $("#popupNew").width(0);
     $("#popupNew").height(0);
 
-    $(".menuBtn").width("150px");
-    $(".menuBtn").height("50px");
+    $(".menuBtn").width("200px");
+    $(".menuBtn").height("75px");
 }
 
 function openCred(){
     $("#popupCred").width("60vh");
-    $("#popupCred").height("50vh");
+    $("#popupCred").height("70vh");
 
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
@@ -26,8 +26,8 @@ function closeCred(){
     $("#popupCred").width(0);
     $("#popupCred").height(0);
 
-    $(".menuBtn").width("150px");
-    $(".menuBtn").height("50px"); 
+    $(".menuBtn").width("200px");
+    $(".menuBtn").height("75px"); 
 }
 
 function startGame(){
