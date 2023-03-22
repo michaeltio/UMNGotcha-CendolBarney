@@ -1,0 +1,25 @@
+#bungkus{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popupNew{
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+    background-color: aquamarine;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 300ms;
+    text-align: center;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#popupNewContent{
+    margin: 30px;
+}
