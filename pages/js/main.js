@@ -1,6 +1,6 @@
 function openNew(){
     $("#popupNew").width("60vh");
-    $("#popupNew").height("60vh");
+    $("#popupNew").height("70vh");
 
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
@@ -12,6 +12,9 @@ function closeNew(){
 
     $(".menuBtn").width("200px");
     $(".menuBtn").height("75px");
+
+    $("#errorMsg").css("visibility", "hidden");
+
 }
 
 function openCred(){
@@ -47,6 +50,13 @@ function closeLoad(){
 }
 
 function startGame(){
-    window.location.href = "game-lobby.html";
+    var name = $('#nameInput').val()
+    if(name!=""){
+        window.location.href = "game-lobby.html";
+        $("#errorMsg").css("visibility", "hidden");
+    }
+    else{
+        $("#errorMsg").css("visibility", "visible");
+    }
 }
 

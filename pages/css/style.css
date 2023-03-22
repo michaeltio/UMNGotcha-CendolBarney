@@ -48,15 +48,24 @@
 
 .windowContent{
     overflow: auto;
-    height: 40vh;
+    height: 50vh;
     box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
     background-color: gainsboro;
     padding: 30px;
     margin: 30px;
 }
 
+#errorMsg{
+    visibility: hidden;
+}
+
 #avatarSelection{
-    height: 20vh;
+    height: 25vh;
+}
+
+.avatarNav{
+    border: none;
+    background-color: gainsboro;
 }
 
 #closeNew{
