@@ -5,21 +5,54 @@
     justify-content: center;
 }
 
-#popupNew{
+.window{
     box-sizing: border-box;
     overflow: hidden;
     height: 0;
     width: 0;
-    background-color: aquamarine;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     transition: 300ms;
     text-align: center;
+}
+
+.menuBtn{
+    background-color: gainsboro;
+    margin: 5px 0;
+    border: none;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: 300ms;
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.windowBtn{
+    border: none;
+    background-color: gainsboro;
+    height: 7vh;
+    width: 20vh;
     box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-#popupNewContent{
+.windowContent{
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: gainsboro;
+    padding: 30px;
+    margin: 30px;
+}
+
+#avatarSelection{
+    height: 20vh;
+}
+
+#closeNew{
+    margin-right: 10px;
+}
+
+
+#popupCredContent{
     margin: 30px;
 }

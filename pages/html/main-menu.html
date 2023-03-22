@@ -17,11 +17,14 @@
 </head>
 <body>
     <div id="bungkus" class="vstack gap-2">
-        <button onclick="openNew()">New Game</button>
-        <div id="popupNew">
-            <div id="popupNewContent" class="vstack">
-                <button onclick="closeNew()">Close</button>
-                <p>New Game</p>
+      
+        <button onclick="openNew()" class="menuBtn">New Game</button>
+        <button class="menuBtn">Load Game</button>
+        <button onclick="openCred()" class="menuBtn">Credits</button>
+      
+        <div id="popupNew" class="window">
+            <div id="popupNewContent" class="vstack windowContent">
+                <h2 class="mt-4">New Game</h2>
                 <div id="avatarSelection" class="hstack">
                     <p class="col-2">&#x2190;</p>
                     <img class="col-8" src=""/>
@@ -29,12 +32,23 @@
                 </div>
                 <label for="nameInput">Name:</label>
                 <input type="text" id="nameInput">
-                <button onclick="startGame()">Start</button>
             </div>
+            <button onclick="closeNew()" class="windowBtn">Back</button>
+            <button onclick="startGame()" class="windowBtn">Create</button>
         </div>
-
-        <button>Load Game</button>
-        <button>Credits</button>
+        
+        
+        <div id="popupCred" class="window">
+            <div id="popupCredContent" class="windowContent">
+                <h2>Credits</h2>
+                <p>UMN Gotcha by Cendol Barney</p>
+                <p>Jonathan Adi Purwoko / 00000071230</p>
+                <p>Russel Shivah Budiarto / 00000070376</p>
+                <p>Felix Mario Walewangko / 00000070498</p>
+                <p>Michael Tio / 00000070515</p>
+            </div>
+            <button onclick="closeCred()" class="windowBtn">Back</button>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </body>
