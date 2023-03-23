@@ -29,6 +29,8 @@
 
 #greetText,#name,#levelText{
     text-align: center;
+    color: white;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7);
 }
 
 #clock{
@@ -37,3 +39,5 @@
     padding: 2px;
     border: 4px solid black;
 }
+
+

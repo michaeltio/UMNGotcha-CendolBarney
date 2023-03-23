@@ -1,25 +1,34 @@
 function moveRight() {
     $('#object').animate({
-      left: "+=4vw"
+      left: "+=3vw"
     }, 50); 
   }
 
 function moveLeft() {
-    $('#object').animate({
-        left: "-=4vw"
-    },50); 
+    var leftNow = parseInt($('#object').css('left'));
+    if(leftNow>3){
+        $('#object').animate({
+            left: "-=3vw"
+        },50); 
+    }
 }
 
 function moveUp() {
-    $('#object').animate({
-        top: "-=4vw"
-    }, 50); 
+    var topNow = parseInt($('#object').css('top'));
+    if(topNow>5){
+        $('#object').animate({
+            top: "-=3vh"
+        }, 50); 
+    }
 }
 
 function moveDown() {
-    $('#object').animate({
-        top: "+=4vw"
-    }, 50);
+    var topNow = parseInt($('#object').css('top'));
+    if(topNow<450){
+        $('#object').animate({
+            top: "+=3vh"
+        }, 50);
+    }
 }
 
 
