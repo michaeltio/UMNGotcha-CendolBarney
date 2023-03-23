@@ -9,13 +9,46 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mini.css"> <!--Import css untuk minigame-->
     <!--Import Javascript File & Jquery-->
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/mini.js"></script>    <!--Import js untuk minigame-->
 
     <title>UMN Gotcha Cendol Barney</title>
 </head>
 <body>
-    
+    <div id="bungkus" class="vstack">
+        <button class="position-absolute top-0 start-0 m-3" onclick="homeBtn()" class="menuBtn">Home</button>
+        <div id="gameArea">
+            <div id="object">
+
+            </div>
+        </div>
+        <div id="moveArea" class="mx-auto">
+            <table id="moveBtn" class="m-auto mt-4">
+                <tr>
+                    <td colspan="2">
+                        <button onclick="moveUp()">&#x2191;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="moveLeft()">&#x2190;</button>                        
+                    </td>
+                    <td>
+                        <button onclick="moveRight()">&#x2192;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                       <button onclick="moveDown()">&#x2193;</button> 
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
 </body>
 </html>

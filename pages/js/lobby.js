@@ -66,11 +66,8 @@ function timeSystem(){
 }
 
     
-
-
-
-function homeBtn(){
-    window.location.href = "main-menu.html"
+function minigameBtn(){
+    window.location.href = "mini-game.html";
 }
 
 function sleepBtn(){

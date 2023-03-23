@@ -62,6 +62,10 @@ function startGame(){
     }
 }
 
+function homeBtn(){
+    window.location.href = "main-menu.html"
+}
+
 $(document).ready(function(){
     $('#nameInput').onclick(function(){
         alert("hi");
