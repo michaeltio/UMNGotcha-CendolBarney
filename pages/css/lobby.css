@@ -24,6 +24,12 @@
     text-align: center;
     margin: 5px;
 }
-#greeting,#name,#levelText{
+#greetText,#name,#levelText{
     text-align: center;
+}
+
+#clock{
+    background-color: gainsboro;
+    text-align: center;
+    padding: 2px;
 }

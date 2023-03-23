@@ -29,14 +29,14 @@
                     <td>
                         <p>Sleep</p>
                         <progress id="sleepBar" value="100" max="100"></progress>
-
+                        
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <p>Play</p>
                         <progress id="playBar" value="100" max="100"></progress>
-
+                        
                     </td>
                     <td>
                         <p>Health</p>
@@ -48,8 +48,13 @@
         </div>
         
         <div id="avatar">
-            <div id="greeting" class="mt-3">
-                <p>Good Morning</p>
+            <div id="clock" class="position-absolute m-3 hstack">
+                <p id="clockHour" class="my-auto">00</p>
+                <p class="my-auto">:</p>
+                <p id="clockMinute" class="my-auto">00</p>
+            </div>
+            <div id="greetText" class="mt-3">
+                <p> </p>
             </div>
             <div id="name">
                 <p>Stuart</p>
@@ -67,7 +72,7 @@
                         <button class="actionsBtn col-6">Eat</button>
                     </td>
                     <td>
-                        <button class="actionsBtn col-6">Sleep</button>
+                        <button class="actionsBtn col-6" onclick="sleepBtn()">Sleep</button>
                     </td>
                 </tr>
                 <tr>
