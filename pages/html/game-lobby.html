@@ -24,24 +24,32 @@
             <table>
                 <tr>
                     <td>
-                        <p>Hunger</p>
-                        <progress id="eatBar" value="100" max="100"></progress>
+                        <div id="eatStat" class="stat">
+                            <p>Hunger</p>
+                            <progress id="eatBar" value="100" max="100"></progress>
+                        </div>
                     </td>
                     <td>
-                        <p>Energy</p>
-                        <progress id="sleepBar" value="100" max="100"></progress>
+                        <div id="sleepStat" class="stat">
+                            <p>Energy</p>
+                            <progress id="sleepBar" value="100" max="100"></progress>
+                        </div>
                         
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <p>Mood</p>
-                        <progress id="playBar" value="100" max="100"></progress>
+                        <div id="playStat" class="stat">
+                            <p>Mood</p>
+                            <progress id="playBar" value="100" max="100"></progress>
+                        </div>
                         
                     </td>
                     <td>
-                        <p>Health</p>
-                        <progress id="healthBar" value="100" max="100"></progress>
+                        <div id="healthStat" class="stat">
+                            <p>Health</p>
+                            <progress id="healthBar" value="100" max="100"></progress>
+                        </div>
 
                     </td>
                 </tr>
@@ -70,7 +78,7 @@
             <table>
                 <tr>
                     <td>
-                        <button class="actionsBtn col-6">Eat</button>
+                        <button class="actionsBtn col-6" onclick="eatBtn()">Eat</button>
                     </td>
                     <td>
                         <button class="actionsBtn col-6" onclick="sleepBtn()">Sleep</button>
@@ -81,7 +89,7 @@
                         <button class="actionsBtn col-6" onclick="minigameBtn()">Play</button>
                     </td>
                     <td>
-                        <button class="actionsBtn col-6">Meds</button>
+                        <button class="actionsBtn col-6" onclick="medsBtn()">Meds</button>
                     </td>
                 </tr>
             </table>

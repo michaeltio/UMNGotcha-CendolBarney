@@ -2,10 +2,11 @@
     overflow: hidden;
     background-color: gainsboro;
     height: 20vh;
-    width: 35vw;
+    width: 50vw;
     display: flex;
     justify-content: center;
     padding: 5px;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #stats table tr td p{
@@ -38,6 +39,18 @@
     text-align: center;
     padding: 2px;
     border: 4px solid black;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.stat{
+    overflow: hidden;
+    font-size: 1em;
+}
+
+#eatBar, #sleepBar, #playBar, #healthBar{
+    width: 12vw;
+    text-align: center;
+    margin: 0 5vw;
 }
 
 
