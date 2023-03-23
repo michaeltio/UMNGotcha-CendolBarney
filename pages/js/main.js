@@ -62,4 +62,25 @@ function startGame(){
     }
 }
 
+$(document).ready(function(){
+    $('#nameInput').onclick(function(){
+        alert("hi");
+    })
+})
+
+$(document).ready(function() {
+    $('#nameInput').keypress(function(e) {
+      if(e.which == 13) {
+        $('#createBtn').click();
+      }
+    });
+  });
+
+$(document).ready(function(){
+    $("button").click(function(){
+        var sound = new Audio('/sources/audio/buttonClick1.mp3');
+        sound.play();
+    })
+})
+
 
