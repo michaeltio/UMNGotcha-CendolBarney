@@ -1,8 +1,17 @@
 function moveRight() {
+  var rightNow = parseInt($('#object').css('left'));
+  if(rightNow<450){
     $('#object').animate({
       left: "+=3vw"
     }, 50); 
   }
+  else{
+    $('#object').animate({
+      left: "50vw"
+    }, 50); 
+  }
+}
+    
 
 function moveLeft() {
     var leftNow = parseInt($('#object').css('left'));
@@ -10,6 +19,11 @@ function moveLeft() {
         $('#object').animate({
             left: "-=3vw"
         },50); 
+    }
+    else{
+      $('#object').animate({
+        left: ""
+    },50); 
     }
 }
 
@@ -20,14 +34,24 @@ function moveUp() {
             top: "-=3vh"
         }, 50); 
     }
+    else{
+      $('#object').animate({
+        top: ""
+    }, 50); 
+    }
 }
 
 function moveDown() {
     var topNow = parseInt($('#object').css('top'));
-    if(topNow<450){
+    if(topNow<440){
         $('#object').animate({
             top: "+=3vh"
         }, 50);
+    }
+    else{
+      $('#object').animate({
+        top: "49vh"
+    }, 50);
     }
 }
 

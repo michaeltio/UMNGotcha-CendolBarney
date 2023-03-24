@@ -44,7 +44,6 @@
     background-color: transparent;
     color: white;
     border: none;
-    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
     transition: 300ms;
     width: 200px;
     height: 75px;
@@ -110,3 +109,14 @@
     margin: 30px;
 }
 
+@media (min-width:0px) and (max-width: 991px) {
+    #bgImg{
+        width: 991px;
+        height: 100vh;
+    }
+
+    #bungkus{
+        text-align: center;
+        margin: auto;
+    }
+}
