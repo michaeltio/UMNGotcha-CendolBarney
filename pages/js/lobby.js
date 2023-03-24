@@ -17,6 +17,8 @@ window.onload = function(){
     else
         greetMsg = "Good Night";
     $("#greetText").text(greetMsg);
+
+    loadStats();
 }
 
 
@@ -110,6 +112,7 @@ function timeSystem(){
 
     
 function minigameBtn(){
+    saveStats();
     window.location.href = "mini-game.html";
 }
 
@@ -155,3 +158,28 @@ function sleepBtn(){
     $("#sleepBar").attr("value", sleepVal);
 }
 
+function saveStats(){
+    var currEat = $("#eatBar").val();
+    var currSleep = $("#sleepBar").val();
+    var currPlay = $("#playBar").val();
+    var currHealth = $("#healthBar").val();
+
+    localStorage.setItem("curr-Eat", currEat);
+    localStorage.setItem("curr-Sleep", currSleep);
+    localStorage.setItem("curr-Play", currPlay);
+    localStorage.setItem("curr-Health", currHealth);
+
+}
+
+function loadStats(){
+    currEat = localStorage.getItem("curr-Eat");
+    currSleep = localStorage.getItem("curr-Sleep");
+    currPlay = localStorage.getItem("curr-Play");
+    currHealth = localStorage.getItem("curr-Health");
+
+    $("#eatBar").attr("value", currEat);
+    $("#sleepBar").attr("value", sleepVal);
+    $("#playBar").attr("value", playVal);
+    $("#healthBar").attr("value", healthVal);
+
+}

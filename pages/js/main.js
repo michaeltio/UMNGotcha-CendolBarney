@@ -55,15 +55,13 @@ function startGame(){
     if(name!=""){
         localStorage.setItem("nameGiven", name);
         $("#errorMsg").css("visibility", "hidden");
+
+        resetStats();
         window.location.href = "game-lobby.html";
     }
     else{
         $("#errorMsg").css("visibility", "visible");
     }
-}
-
-function homeBtn(){
-    window.location.href = "main-menu.html"
 }
 
 $(document).ready(function(){
@@ -87,4 +85,14 @@ $(document).ready(function(){
     })
 })
 
+function homeBtn(){
+    window.location.href = "main-menu.html"
+}
+
+function resetStats(){
+    localStorage.setItem("curr-Eat", 100);
+    localStorage.setItem("curr-Sleep", 100);
+    localStorage.setItem("curr-Play", 100);
+    localStorage.setItem("curr-Health", 100);
+}
 
