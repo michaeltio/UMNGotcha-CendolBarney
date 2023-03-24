@@ -87,6 +87,16 @@
     border-radius: 4px;
 }
 
+.windowContentEx{
+    overflow: auto;
+    height: 50vh;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: gainsboro;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 4px;
+}
+
 #errorMsg{
     visibility: hidden;
 }

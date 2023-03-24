@@ -92,6 +92,7 @@ function timer(){
   else{
     $("#target").css("display", "none");
     $("#gameTimer").text("Time's Up!");
+    setInterval(gameEnd,1500);
   }
 }
 
@@ -137,3 +138,23 @@ function checkCollision(){
       $("#stars").text(scoreNow);
     }
   }
+
+function gameEnd(){
+    $("#popupGameEnd").width("60vh");
+    $("#popupGameEnd").height("70vh");
+
+    $("#moveArea").width(0);
+    $("#moveArea").height(0);
+
+    $("#gameArea").width(0);
+    $("#gameArea").height(0);
+
+    $("#gameTimerBox").width(0);
+    $("#gameTimerBox").height(0);
+
+    $("#starsEnd").text(scoreNow);
+}
+
+function backLobby(){
+  window.location.href = "game-lobby.html";
+}
