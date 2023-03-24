@@ -1,6 +1,6 @@
 function moveRight() {
   var rightNow = parseInt($('#object').css('left'));
-  if(rightNow<450){
+  if(rightNow<850){
     $('#object').animate({
       left: "+=3vw"
     }, 50); 
@@ -10,6 +10,7 @@ function moveRight() {
       left: "50vw"
     }, 50); 
   }
+  checkCollision();
 }
     
 
@@ -25,6 +26,7 @@ function moveLeft() {
         left: ""
     },50); 
     }
+    checkCollision();
 }
 
 function moveUp() {
@@ -39,20 +41,22 @@ function moveUp() {
         top: ""
     }, 50); 
     }
+    checkCollision();
 }
 
 function moveDown() {
     var topNow = parseInt($('#object').css('top'));
-    if(topNow<440){
+    if(topNow<350){
         $('#object').animate({
             top: "+=3vh"
         }, 50);
     }
     else{
       $('#object').animate({
-        top: "49vh"
+        top: "40vh"
     }, 50);
     }
+    checkCollision();
 }
 
 
@@ -76,15 +80,60 @@ $(document).ready(function() {
 
 setInterval(timer, 1000);
 
+let timeLeft;
+
 function timer(){
-  var timeLeft = parseInt($("#gameTimer").text())
+  timeLeft = parseInt($("#gameTimer").text())
   
   if(timeLeft > 0){
     timeLeft -= 1;
     $("#gameTimer").text(timeLeft);
   }
   else{
+    $("#target").css("display", "none");
     $("#gameTimer").text("Time's Up!");
   }
-  
 }
+
+function moveTarget(){
+  var ranH = randomHeight() + "px";
+  var ranW = randomWidth() + "px";
+
+  
+  $("#target").css("top",ranH);
+  $("#target").css("left",ranW);
+}
+
+function randomHeight() {
+  let max = 280;
+  let min = -190;
+  return Math.random() * (max - min) + min;
+}
+
+function randomWidth() {
+  let max = 1026;
+  let min = 0;
+  return Math.random() * (max - min) + min;
+}
+
+function checkCollision(){
+    var object = $('#object');
+    var target = $('#target');
+
+    var objectLeft = object.offset().left;
+    var objectTop = object.offset().top;
+    var objectBottom = objectTop + object.outerHeight();
+    var objectRight = objectLeft + object.outerWidth();
+
+    var targetLeft = target.offset().left;
+    var targetTop = target.offset().top;
+    var targetBottom = targetTop + target.outerHeight();
+    var targetRight = targetLeft + target.outerWidth();
+    
+    if (objectRight >= targetLeft && objectLeft <= targetRight && objectBottom >= targetTop && objectTop <= targetBottom) {
+      moveTarget();
+      scoreNow = parseInt($("#stars").text());
+      scoreNow += 1;
+      $("#stars").text(scoreNow);
+    }
+  }
