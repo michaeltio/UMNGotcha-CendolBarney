@@ -21,3 +21,8 @@
     left: 0;
     top: 0;
 }
+
+#gameTimer{
+    color: white;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+}

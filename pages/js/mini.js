@@ -73,3 +73,18 @@ $(document).ready(function() {
       }
     });
   });
+
+setInterval(timer, 1000);
+
+function timer(){
+  var timeLeft = parseInt($("#gameTimer").text())
+  
+  if(timeLeft > 0){
+    timeLeft -= 1;
+    $("#gameTimer").text(timeLeft);
+  }
+  else{
+    $("#gameTimer").text("Time's Up!");
+  }
+  
+}
