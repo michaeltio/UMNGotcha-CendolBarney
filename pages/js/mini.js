@@ -156,5 +156,19 @@ function gameEnd(){
 }
 
 function backLobby(){
-  window.location.href = "game-lobby.html";
+    let currEat = localStorage.getItem("curr-Eat");
+    let currSleep = localStorage.getItem("curr-Sleep");
+    let currPlay = localStorage.getItem("curr-Play");
+    
+    currEat -= 40;
+    currSleep -= 40;
+    currPlay = parseInt(currPlay)
+    currPlay = currPlay + scoreNow;
+  
+
+    localStorage.setItem("curr-Eat", currEat);
+    localStorage.setItem("curr-Sleep", currSleep);
+    localStorage.setItem("curr-Play", currPlay);
+
+    window.location.href = "game-lobby.html";
 }

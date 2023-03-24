@@ -64,12 +64,6 @@ function startGame(){
     }
 }
 
-$(document).ready(function(){
-    $('#nameInput').onclick(function(){
-        alert("hi");
-    })
-})
-
 $(document).ready(function() {
     $('#nameInput').keypress(function(e) {
       if(e.which == 13) {
@@ -94,5 +88,8 @@ function resetStats(){
     localStorage.setItem("curr-Sleep", 100);
     localStorage.setItem("curr-Play", 100);
     localStorage.setItem("curr-Health", 100);
+
+    localStorage.setItem("curr-Minute", "00");
+    localStorage.setItem("curr-Hour", "07");
 }
 

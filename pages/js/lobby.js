@@ -18,7 +18,7 @@ window.onload = function(){
         greetMsg = "Good Night";
     $("#greetText").text(greetMsg);
 
-    loadStats();
+    loadInfo();
 }
 
 
@@ -112,7 +112,7 @@ function timeSystem(){
 
     
 function minigameBtn(){
-    saveStats();
+    saveInfo();
     window.location.href = "mini-game.html";
 }
 
@@ -158,7 +158,7 @@ function sleepBtn(){
     $("#sleepBar").attr("value", sleepVal);
 }
 
-function saveStats(){
+function saveInfo(){
     var currEat = $("#eatBar").val();
     var currSleep = $("#sleepBar").val();
     var currPlay = $("#playBar").val();
@@ -169,17 +169,28 @@ function saveStats(){
     localStorage.setItem("curr-Play", currPlay);
     localStorage.setItem("curr-Health", currHealth);
 
+    currMinute = $("#clockMinute").text();
+    currHour = $("#clockHour").text();
+
+    
+    localStorage.setItem("curr-Minute", currMinute);
+    localStorage.setItem("curr-Hour", currHour);
 }
 
-function loadStats(){
+function loadInfo(){
     currEat = localStorage.getItem("curr-Eat");
     currSleep = localStorage.getItem("curr-Sleep");
     currPlay = localStorage.getItem("curr-Play");
     currHealth = localStorage.getItem("curr-Health");
 
     $("#eatBar").attr("value", currEat);
-    $("#sleepBar").attr("value", sleepVal);
-    $("#playBar").attr("value", playVal);
-    $("#healthBar").attr("value", healthVal);
+    $("#sleepBar").attr("value", currSleep);
+    $("#playBar").attr("value", currPlay);
+    $("#healthBar").attr("value", currHealth);
 
+    currMinute = localStorage.getItem("curr-Minute");
+    currHour = localStorage.getItem("curr-Hour");
+
+    $("#clockMinute").text(currMinute);
+    $("#clockHour").text(currHour);    
 }
