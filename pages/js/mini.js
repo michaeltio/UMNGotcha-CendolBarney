@@ -87,6 +87,8 @@ function timer(){
   
   if(timeLeft > 0){
     timeLeft -= 1;
+    var clock = new Audio('/sources/audio/timer.mp3');
+    clock.play();
     $("#gameTimer").text(timeLeft);
   }
   else{
@@ -133,6 +135,8 @@ function checkCollision(){
     
     if (objectRight >= targetLeft && objectLeft <= targetRight && objectBottom >= targetTop && objectTop <= targetBottom) {
       moveTarget();
+      var point = new Audio('/sources/audio/point.mp3');
+      point.play();
       scoreNow = parseInt($("#stars").text());
       scoreNow += 1;
       $("#stars").text(scoreNow);

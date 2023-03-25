@@ -77,6 +77,12 @@ $(document).ready(function(){
         var sound = new Audio('/sources/audio/buttonClick1.mp3');
         sound.play();
     })
+
+    
+    $("button").mouseover(function(){
+        var sound = new Audio('/sources/audio/hover.mp3');
+        sound.play();
+    })
 })
 
 function homeBtn(){
