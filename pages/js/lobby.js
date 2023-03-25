@@ -25,49 +25,10 @@ window.onload = function(){
 
 setInterval(timeSystem, 1000);
 
-function timeSystem(){
-    var eatVal = $('#eatBar').attr('value');
-    if(eatVal>100)
-        eatVal = 100;
-    if(eatVal<0)
-        eatVal = 0;
-    eatVal -= 0.1;
-    $("#eatBar").attr("value", eatVal);
 
-    var sleepVal = $('#sleepBar').attr('value');
-    if(sleepVal>100)
-        sleepVal = 100;
-    if(sleepVal<0)
-        sleepVal = 0;
-    sleepVal -= 0.1;
-    $("#sleepBar").attr("value", sleepVal);
-   
-    var playVal = $('#playBar').attr('value');
-    if(playVal > 100)
-        playVal = 100;
-    if(playVal < 0)
-        playVal = 0;
-    playVal -= 0.1;
-    $("#playBar").attr("value", playVal);
-   
-    var healthVal = $('#healthBar').attr('value');
-    if(healthVal>100)
-        healthVal = 100;
-    if(healthVal<0)
-        healthVal = 0;
-    if(eatVal>40){
-        healthVal -= 0.1;
-    }
-    else if(eatVal>20){
-        healthVal -= 2;
-    }
-    else if(eatVal>2){
-        healthVal -= 3;
-    }
-    else{
-        healthVal -= 5;
-    }
-    $("#healthBar").attr("value", healthVal);
+function timeSystem(){
+    statsOvertime();
+    let days = parseInt($("#dayCounter").text()); 
 
     var clockMinute = $("#clockMinute").text();
     var clockHour = $("#clockHour").text();
@@ -81,6 +42,12 @@ function timeSystem(){
     }
     if(hour>23){
         hour = 0;
+        days +=1;
+        if(days%5==0){
+            let level = parseInt($("#levelNum").text()) ;
+            level+=1;
+            $("#levelNum").text(level)
+        }
     }
 
     minute += 1;
@@ -130,16 +97,28 @@ function eatBtn(){
     var healthVal = parseFloat($('#healthBar').attr('value')) ;
     healthVal += 30;
     $("#healthBar").attr("value", healthVal);
+
+    var playVal = parseFloat($('#playBar').attr('value')); 
+    playVal -= 15;
+    $("#playBar").attr("value", playVal);
 }
 
 function sleepBtn(){
     var clockHour = $("#clockHour").text();
     var hour = parseInt(clockHour);
-    
+    let days = parseInt($("#dayCounter").text()); 
+
     hour += 8;
 
     if(hour>23){
+        days +=1;
+        $("#dayCounter").text(days)
         hour -= 24;
+        if(days%5==0){
+            let level = parseInt($("#levelNum").text()) ;
+            level+=1;
+            $("#levelNum").text(level)
+        }
     }
     
     let hourFormatted = hour.toLocaleString('en-US', {
@@ -156,6 +135,10 @@ function sleepBtn(){
     var sleepVal = parseFloat($('#sleepBar').attr('value')); 
     sleepVal += 60;
     $("#sleepBar").attr("value", sleepVal);
+    
+    var playVal = parseFloat($('#playBar').attr('value')); 
+    playVal -= 15;
+    $("#playBar").attr("value", playVal);
 }
 
 function saveInfo(){
@@ -172,9 +155,14 @@ function saveInfo(){
     currMinute = $("#clockMinute").text();
     currHour = $("#clockHour").text();
 
-    
     localStorage.setItem("curr-Minute", currMinute);
     localStorage.setItem("curr-Hour", currHour);
+
+    let days = parseInt($("#dayCounter").text()); 
+    localStorage.setItem("curr-Days", days);
+
+    let level = parseInt($("#levelNum").text()); 
+    localStorage.setItem("curr-Level", level);
 }
 
 function loadInfo(){
@@ -193,4 +181,55 @@ function loadInfo(){
 
     $("#clockMinute").text(currMinute);
     $("#clockHour").text(currHour);    
+
+    days = localStorage.getItem("curr-Days")
+    $("#dayCounter").text(days)
+
+    level = localStorage.getItem("curr-Level")
+    $("#levelNum").text(level)
+}
+
+function statsOvertime(){
+    var eatVal = $('#eatBar').attr('value');
+    if(eatVal>100)
+        eatVal = 100;
+    if(eatVal<0)
+        eatVal = 0;
+    eatVal -= 0.1;
+    $("#eatBar").attr("value", eatVal);
+
+    var sleepVal = $('#sleepBar').attr('value');
+    if(sleepVal>100)
+        sleepVal = 100;
+    if(sleepVal<0)
+        sleepVal = 0;
+    sleepVal -= 0.1;
+    $("#sleepBar").attr("value", sleepVal);
+   
+    var playVal = $('#playBar').attr('value');
+    if(playVal > 100)
+        playVal = 100;
+    if(playVal < 0)
+        playVal = 0;
+    playVal -= 0.1;
+    $("#playBar").attr("value", playVal);
+   
+    var healthVal = $('#healthBar').attr('value');
+    if(healthVal>100)
+        healthVal = 100;
+    if(healthVal<0)
+        healthVal = 0;
+    if(eatVal>40){
+        healthVal -= 0.1;
+    }
+    else if(eatVal>20){
+        healthVal -= 2;
+    }
+    else if(eatVal>2){
+        healthVal -= 3;
+    }
+    else{
+        healthVal -= 5;
+    }
+    $("#healthBar").attr("value", healthVal);
 }

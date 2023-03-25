@@ -91,5 +91,8 @@ function resetStats(){
 
     localStorage.setItem("curr-Minute", "00");
     localStorage.setItem("curr-Hour", "07");
+
+    localStorage.setItem("curr-Days", "1");
+    localStorage.setItem("curr-Level", "1");
 }
 
