@@ -19,6 +19,7 @@ window.onload = function(){
     $("#greetText").text(greetMsg);
 
     loadInfo();
+    loadAvatar();
 }
 
 
@@ -163,6 +164,28 @@ function saveInfo(){
 
     let level = parseInt($("#levelNum").text()); 
     localStorage.setItem("curr-Level", level);
+}
+
+function loadAvatar(){
+    avatarCode = localStorage.getItem("avatar-Code");
+    avatarCode = parseInt(avatarCode);
+    tesDir= "stuart/"
+    tesFile= "Stuart_"
+    tesAct = ""
+    switch(avatarCode){
+        case 1:  tesAct = "Idle.gif"
+        break;
+        case 2:  tesAct = "Kunyah.gif"
+        break;
+        case 3: tesAct = "Tidur.gif"
+        break;
+        case 4:  tesAct = "Jalan_Depan.gif"
+        break;
+        case 5:  tesAct = "Jalan_Kiri.gif"
+        break;
+    }
+    sourceImg = "/sources/images/" + tesDir + tesFile + tesAct;
+    $("#avatarImg").attr("src", sourceImg)
 }
 
 function loadInfo(){

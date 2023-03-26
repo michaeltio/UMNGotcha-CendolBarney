@@ -34,6 +34,7 @@
     height: 75px;
     overflow: hidden;
     transition: 300ms;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .actionsBtn:hover{
@@ -41,8 +42,13 @@
     font-size: 1.15em;
 }
 
+#avatarImg{
+    width: 30vh;
+    height: 30vh;
 
-#greetText,#name,#levelText,#levelNum{
+}
+
+#greetText,#name,#levelText,#levelNum, #dayCounterBox{
     text-align: center;
     color: white;
     text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7);

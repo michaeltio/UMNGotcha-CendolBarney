@@ -1,3 +1,50 @@
+let avatarCode;
+
+window.onload = function(){
+    $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+    avatarCode = 1;
+}
+
+function changeLeft(){
+    avatarCode -= 1;
+    if(avatarCode==0){
+        avatarCode = 5;
+    }
+
+    switch(avatarCode){
+        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+            break;
+        case 2: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Kunyah.gif")
+            break;
+        case 3: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Tidur.gif")
+            break;
+        case 4: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Depan.gif")
+            break;
+        case 5: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Kiri.gif")
+            break;
+    }
+}
+
+function changeRight(){
+    avatarCode += 1;
+    if(avatarCode==6){
+        avatarCode = 1;
+    }
+    
+    switch(avatarCode){
+        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+            break;
+        case 2: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Kunyah.gif")
+            break;
+        case 3: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Tidur.gif")
+            break;
+        case 4: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Depan.gif")
+            break;
+        case 5: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Kiri.gif")
+            break;
+    }
+}
+
 function openNew(){
     $("#popupNew").width("60vh");
     $("#popupNew").height("70vh");
@@ -57,6 +104,7 @@ function startGame(){
         $("#errorMsg").css("visibility", "hidden");
 
         resetStats();
+        sendAvatarCode();
         window.location.href = "game-lobby.html";
     }
     else{
@@ -102,3 +150,6 @@ function resetStats(){
     localStorage.setItem("curr-Level", "1");
 }
 
+function sendAvatarCode(){
+    localStorage.setItem("avatar-Code", avatarCode);
+}

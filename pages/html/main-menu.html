@@ -28,11 +28,11 @@
             <div id="popupNewContent" class="vstack windowContent">
                 <h2 class="mt-4">New Game</h2>
                 <div id="avatarSelection" class="hstack">
-                    <button class="col-2 avatarNav">&#x2190;</button>
-                    <img class="col-8" src=""/>
-                    <button class="col-2 avatarNav">&#x2192;</button>
+                    <button id="avatarLeft" class="col-2 avatarNav" onclick="changeLeft()">&#x2190;</button>
+                    <img class="col-8" id="avatarImg" src=""/>
+                    <button id="avatarRight" class="col-2 avatarNav" onclick="changeRight()">&#x2192;</button>
                 </div>
-                <label for="nameInput" class="mb-3">Name:</label>
+                <label for="nameInput" class="mb-3 mt-3">Name:</label>
                 <input type="text" id="nameInput">
                 <p id="errorMsg" class="mt-3">Give your pet a name!</p>
             </div>

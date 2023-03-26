@@ -110,6 +110,10 @@
 }
 
 
+#popupNewContent{
+    overflow: hidden;
+}
+
 #popupCredContent{
     margin: 30px;
 }
