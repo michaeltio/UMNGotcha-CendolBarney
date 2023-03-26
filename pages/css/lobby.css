@@ -1,3 +1,4 @@
+
 #stats{
     overflow: hidden;
     background-color: gainsboro;
@@ -19,14 +20,27 @@
     border: 1px solid black;
 }
 
-.actionsBtn{
-    width: 15vw;
-    height: 5vh;
-    text-align: center;
-    margin: 5px;
-    border: none;
-    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+#actions{
+    overflow: hidden;
 }
+
+.actionsBtn{
+    margin: 5px 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    transition: 300ms;
+    width: 200px;
+    height: 75px;
+    overflow: hidden;
+    transition: 300ms;
+}
+
+.actionsBtn:hover{
+    width: 215px;
+    font-size: 1.15em;
+}
+
 
 #greetText,#name,#levelText,#levelNum{
     text-align: center;

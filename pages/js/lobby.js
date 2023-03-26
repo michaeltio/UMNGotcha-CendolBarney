@@ -223,13 +223,57 @@ function statsOvertime(){
         healthVal -= 0.1;
     }
     else if(eatVal>20){
-        healthVal -= 2;
+        healthVal -= 1;
     }
     else if(eatVal>2){
-        healthVal -= 3;
+        healthVal -= 2;
     }
     else{
-        healthVal -= 5;
+        healthVal -= 3;
+    }
+
+    if(sleepVal>40){
+        healthVal -= 0.1;
+    }
+    else if(sleepVal>20){
+        healthVal -= 1;
+    }
+    else if(sleepVal>2){
+        healthVal -= 2;
+    }
+    else{
+        healthVal -= 3;
+    }
+
+    if(playVal>40){
+        healthVal -= 0.1;
+    }
+    else if(playVal>20){
+        healthVal -= 1;
+    }
+    else if(playVal>2){
+        healthVal -= 2;
+    }
+    else{
+        healthVal -= 3;
     }
     $("#healthBar").attr("value", healthVal);
+
+    if(healthVal<0){
+        $("#popupGameOver").width("60vh");
+        $("#popupGameOver").height("70vh");
+
+        $("#stats").width(0);
+        $("#stats").height(0);
+        
+        $("#avatar").width(0);
+        $("#avatar").height(0);
+
+        $("#levelProgress").width(0);
+        $("#levelProgress").height(0);
+
+        $("#actions").width(0);
+        $("#actions").height(0);
+
+    }
 }

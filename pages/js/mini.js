@@ -93,6 +93,7 @@ function timer(){
   }
   else{
     $("#target").css("display", "none");
+    $("#score").css("display", "none");
     $("#gameTimer").text("Time's Up!");
     setInterval(gameEnd,1500);
   }

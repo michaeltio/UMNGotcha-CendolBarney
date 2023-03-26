@@ -51,11 +51,6 @@
     transition: 300ms;
 }
 
-.menuBtn:hover, .btnText{
-    width: 215px;
-    font-size: 1.15em;
-}
-
 .menuBtn:hover{
     width: 215px;
     font-size: 1.15em;
