@@ -1,7 +1,7 @@
 let avatarCode;
 
 window.onload = function(){
-    $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+    $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
     avatarCode = 1;
 }
 
@@ -12,15 +12,15 @@ function changeLeft(){
     }
 
     switch(avatarCode){
-        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
             break;
-        case 2: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Kunyah.gif")
+        case 2: $("#avatarImg").attr("src", "/sources/images/rock/rock_dewasa_idle.gif")
             break;
-        case 3: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Tidur.gif")
+        case 3: $("#avatarImg").attr("src", "/sources/images/bebek/bebek_dewasa_idle.gif")
             break;
-        case 4: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Depan.gif")
+        case 4: $("#avatarImg").attr("src", "/sources/images/slime/slime_dewasa_idle.gif")
             break;
-        case 5: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Kiri.gif")
+        case 5: $("#avatarImg").attr("src", "/sources/images/masbro/masbro_dewasa_idle.gif")
             break;
     }
 }
@@ -32,15 +32,15 @@ function changeRight(){
     }
     
     switch(avatarCode){
-        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
             break;
-        case 2: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Kunyah.gif")
+        case 2: $("#avatarImg").attr("src", "/sources/images/rock/rock_dewasa_idle.gif")
             break;
-        case 3: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Tidur.gif")
+        case 3: $("#avatarImg").attr("src", "/sources/images/bebek/bebek_dewasa_idle.gif")
             break;
-        case 4: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Depan.gif")
+        case 4: $("#avatarImg").attr("src", "/sources/images/slime/slime_dewasa_idle.gif")
             break;
-        case 5: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Kiri.gif")
+        case 5: $("#avatarImg").attr("src", "/sources/images/masbro/masbro_dewasa_idle.gif")
             break;
     }
 }
@@ -104,7 +104,7 @@ function startGame(){
         $("#errorMsg").css("visibility", "hidden");
 
         resetStats();
-        sendAvatarCode();
+        sendAvatar();
         window.location.href = "game-lobby.html";
     }
     else{
@@ -150,6 +150,19 @@ function resetStats(){
     localStorage.setItem("curr-Level", "1");
 }
 
-function sendAvatarCode(){
-    localStorage.setItem("avatar-Code", avatarCode);
+function sendAvatar(){
+    let avatarChosen
+    switch(avatarCode){
+        case 1: avatarChosen = "/stuart";
+            break;
+        case 2: avatarChosen = "/rock";
+            break;
+        case 3: avatarChosen = "/bebek";
+            break;
+        case 4: avatarChosen = "/slime";
+            break;
+        case 5: avatarChosen = "/masbro";
+            break;
+    }
+    localStorage.setItem("avatar-Chosen", avatarChosen);
 }

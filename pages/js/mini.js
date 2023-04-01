@@ -10,9 +10,12 @@ function moveRight() {
       left: "50vw"
     }, 50); 
   }
+  if(avatarAction !="_kanan.gif" ){
+    avatarAction = "_kanan.gif";
+    updateAvatar();
+  }
   checkCollision();
-}
-    
+}   
 
 function moveLeft() {
     var leftNow = parseInt($('#object').css('left'));
@@ -25,6 +28,10 @@ function moveLeft() {
       $('#object').animate({
         left: ""
     },50); 
+    }
+    if(avatarAction !="_kiri.gif"){
+      avatarAction = "_kiri.gif";
+      updateAvatar();
     }
     checkCollision();
 }
@@ -41,6 +48,10 @@ function moveUp() {
         top: ""
     }, 50); 
     }
+    if(avatarAction !="_belakang.gif"){
+      avatarAction = "_belakang.gif";
+      updateAvatar();
+    }
     checkCollision();
 }
 
@@ -55,6 +66,10 @@ function moveDown() {
       $('#object').animate({
         top: "40vh"
     }, 50);
+    }
+    if(avatarAction !="_depan.gif"){
+      avatarAction = "_depan.gif";
+      updateAvatar();
     }
     checkCollision();
 }
@@ -176,4 +191,36 @@ function backLobby(){
     localStorage.setItem("curr-Play", currPlay);
 
     window.location.href = "game-lobby.html";
+}
+
+let vw;
+let vh;
+
+window.onload = function(){
+  vw = window.innerWidth*0.01;
+  vh = window.innerHeight*0.01;
+
+  loadAvatar();
+}
+
+$(window).resize(function() {
+  vw = window.innerWidth*0.01;
+  vh = window.innerHeight*0.01;
+});
+
+function halo(){
+  alert(vw);
+  alert(vh);
+}
+
+function loadAvatar(){
+  avatarChosen = localStorage.getItem("avatar-Chosen");
+  avatarAge = localStorage.getItem("avatar-Age");
+  avatarAction = "_depan.gif"
+  updateAvatar();
+}
+
+function updateAvatar(){
+  sourceImg = "/sources/images" + avatarChosen + avatarChosen + avatarAge + avatarAction;
+  $("#objectImg").attr("src", sourceImg);
 }

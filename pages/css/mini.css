@@ -15,12 +15,16 @@
 }
 
 #object{
-    background-color: black;
     width: 10vw;
     height: 10vw;
     position: relative;
     left: 0;
     top: 0;
+}
+
+#objectImg{
+    width: 10vw;
+    height: 10vw;
 }
 
 #gameTimer{

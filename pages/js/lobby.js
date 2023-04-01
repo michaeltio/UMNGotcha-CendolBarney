@@ -1,3 +1,7 @@
+let avatarChosen;
+let avatarAge;
+let avatarAction;
+
 window.onload = function(){
     var newName = localStorage.getItem("nameGiven");
     $('#name').text(newName);
@@ -48,6 +52,14 @@ function timeSystem(){
             let level = parseInt($("#levelNum").text()) ;
             level+=1;
             $("#levelNum").text(level)
+            if(level>9){
+                avatarAge = "_dewasa"
+                updateAvatar()
+            }
+            else if(level>4){
+                avatarAge = "_anak"
+                updateAvatar();
+            }
         }
     }
 
@@ -88,6 +100,10 @@ function medsBtn(){
     var healthVal = parseFloat($('#healthBar').attr('value'));
     healthVal += 15;
     $("#healthBar").attr("value", healthVal);
+    avatarAction = "_makan.gif"
+    updateAvatar();
+    avatarAction = "_idle.gif"
+    setInterval(updateAvatar, 3000)
 }
 
 function eatBtn(){
@@ -102,6 +118,11 @@ function eatBtn(){
     var playVal = parseFloat($('#playBar').attr('value')); 
     playVal -= 15;
     $("#playBar").attr("value", playVal);
+
+    avatarAction = "_makan.gif"
+    updateAvatar();
+    avatarAction = "_idle.gif"
+    setInterval(updateAvatar, 3000)
 }
 
 function sleepBtn(){
@@ -118,7 +139,15 @@ function sleepBtn(){
         if(days%5==0){
             let level = parseInt($("#levelNum").text()) ;
             level+=1;
-            $("#levelNum").text(level)
+            $("#levelNum").text(level);
+            if(level>9){
+                avatarAge = "_dewasa"
+                updateAvatar()
+            }
+            else if(level>4){
+                avatarAge = "_anak"
+                updateAvatar();
+            }
         }
     }
     
@@ -140,6 +169,12 @@ function sleepBtn(){
     var playVal = parseFloat($('#playBar').attr('value')); 
     playVal -= 15;
     $("#playBar").attr("value", playVal);
+
+    avatarAction = "_tidur.gif"
+    updateAvatar();
+    avatarAction = "_idle.gif"
+    setInterval(updateAvatar, 3000)
+    
 }
 
 function saveInfo(){
@@ -152,39 +187,31 @@ function saveInfo(){
     localStorage.setItem("curr-Sleep", currSleep);
     localStorage.setItem("curr-Play", currPlay);
     localStorage.setItem("curr-Health", currHealth);
-
+    
     currMinute = $("#clockMinute").text();
     currHour = $("#clockHour").text();
-
+    
     localStorage.setItem("curr-Minute", currMinute);
     localStorage.setItem("curr-Hour", currHour);
-
+    
     let days = parseInt($("#dayCounter").text()); 
     localStorage.setItem("curr-Days", days);
-
+    
     let level = parseInt($("#levelNum").text()); 
     localStorage.setItem("curr-Level", level);
+    
+    localStorage.setItem("avatar-Age", avatarAge);
 }
 
 function loadAvatar(){
-    avatarCode = localStorage.getItem("avatar-Code");
-    avatarCode = parseInt(avatarCode);
-    tesDir= "stuart/"
-    tesFile= "Stuart_"
-    tesAct = ""
-    switch(avatarCode){
-        case 1:  tesAct = "Idle.gif"
-        break;
-        case 2:  tesAct = "Kunyah.gif"
-        break;
-        case 3: tesAct = "Tidur.gif"
-        break;
-        case 4:  tesAct = "Jalan_Depan.gif"
-        break;
-        case 5:  tesAct = "Jalan_Kiri.gif"
-        break;
-    }
-    sourceImg = "/sources/images/" + tesDir + tesFile + tesAct;
+    avatarChosen = localStorage.getItem("avatar-Chosen");
+    avatarAge = "_bayi"
+    avatarAction = "_idle.gif"
+    updateAvatar();
+}
+
+function updateAvatar(){
+    sourceImg = "/sources/images" + avatarChosen + avatarChosen + avatarAge + avatarAction;
     $("#avatarImg").attr("src", sourceImg)
 }
 
