@@ -204,6 +204,9 @@ window.onload = function(){
 
   var music = new Audio('/sources/audio/miniMusic.mp3');
   music.play();
+
+  let bgNow = localStorage.getItem("bg-Now")
+  $("#bgImg").attr("src", bgNow)
 }
 
 $(window).resize(function() {

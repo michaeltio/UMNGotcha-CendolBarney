@@ -1,6 +1,7 @@
 let avatarChosen;
 let avatarAge;
 let avatarAction;
+let bgNow;
 
 window.onload = function(){
     var newName = localStorage.getItem("nameGiven");
@@ -86,14 +87,26 @@ function timeSystem(){
     
     let greetMsg; 
     
-    if(hour>4 && hour<11)
+    if(hour>4 && hour<11){
         greetMsg = "Good Morning";
-    else if(hour>10 && hour<15)
+        bgNow = "/sources/images/backgrounds/bgMorning.png"
+        $("#bgImg").attr("src", bgNow)
+    }
+    else if(hour>10 && hour<15){
         greetMsg = "Good Afternoon";
-    else if(hour>14 && hour<19)
+        bgNow = "/sources/images/backgrounds/bgAfternoon.png"
+        $("#bgImg").attr("src", bgNow)
+    }
+    else if(hour>14 && hour<19){
         greetMsg = "Good Evening";
-    else
+        bgNow = "/sources/images/backgrounds/bgEvening.png"
+        $("#bgImg").attr("src", bgNow)
+    }
+    else{
         greetMsg = "Good Night";
+        bgNow = "/sources/images/backgrounds/bgNight.png"
+        $("#bgImg").attr("src", bgNow)
+    }
     $("#greetText").text(greetMsg);
 }
 
@@ -201,7 +214,9 @@ function saveInfo(){
     localStorage.setItem("curr-Level", level);
     
     localStorage.setItem("avatar-Age", avatarAge);
+    localStorage.setItem("bg-Now", bgNow);
 }
+
 
 function loadAvatar(){
     avatarChosen = localStorage.getItem("avatar-Chosen");

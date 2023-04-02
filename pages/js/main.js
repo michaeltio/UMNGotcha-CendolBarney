@@ -91,26 +91,6 @@ function closeCred(){
     $("#mainTitle").css("visibility", "visible");
 }
 
-function openLoad(){
-    $("#popupLoad").width("60vh");
-    $("#popupLoad").height("70vh");
-    
-    $(".menuBtn").width(0);
-    $(".menuBtn").height(0);
-
-    $("#mainTitle").css("visibility", "hidden");
-}
-
-function closeLoad(){
-    $("#popupLoad").width(0);
-    $("#popupLoad").height(0);
-
-    $(".menuBtn").width("200px");
-    $(".menuBtn").height("75px");
-    
-    $("#mainTitle").css("visibility", "visible");
-}
-
 function startGame(){
     var name = $('#nameInput').val()
     
@@ -163,6 +143,8 @@ function resetStats(){
 
     localStorage.setItem("curr-Days", "1");
     localStorage.setItem("curr-Level", "1");
+
+    localStorage.setItem("bg-Now", "/sources/images/backgrounds/bgMorning.png");
 }
 
 function sendAvatar(){

@@ -21,7 +21,6 @@
         <h1 id="mainTitle">UMN GOTCHA</h1>
 
         <button onclick="openNew()" class="menuBtn">New Game</button>
-        <button onclick="openLoad()" class="menuBtn">Load Game</button>
         <button onclick="openCred()" class="menuBtn">Credits</button>
       
         <div id="popupNew" class="window">
@@ -39,19 +38,6 @@
             <button onclick="closeNew()" class="windowBtn">Back</button>
             <button id="createBtn" onclick="startGame()" class="windowBtn">Create</button>
         </div>
-        
-        <div id="popupLoad" class="window">
-            <div id="popupLoadContent" class="vstack windowContent">
-                <h2 class="mt-4">Load Game</h2>
-                <div id="loadSelection" class="vstack mt-4">
-                    <p>Not available at the moment.</p>
-                    <p>Sorry!</p>
-                </div>
-            </div>
-            <button onclick="closeLoad()" class="windowBtn">Back</button>
-            <button onclick="startGame()" class="windowBtn">Play</button>
-        </div>
-        
         
         <div id="popupCred" class="window">
             <div id="popupCredContent" class="windowContent">
