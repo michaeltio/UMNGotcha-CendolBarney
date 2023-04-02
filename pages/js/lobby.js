@@ -6,6 +6,9 @@ window.onload = function(){
     var newName = localStorage.getItem("nameGiven");
     $('#name').text(newName);
 
+    var music = new Audio('/sources/audio/bgMusic.mp3');
+    music.play();
+
     var clockHour = $("#clockHour").text();
     var hour = parseInt(clockHour);
 
@@ -32,6 +35,10 @@ setInterval(timeSystem, 1000);
 
 
 function timeSystem(){
+    if(avatarAction!="_idle.gif"){
+        avatarAction = "_idle.gif";
+        setTimeout(updateAvatar,3000)
+    }
     statsOvertime();
     let days = parseInt($("#dayCounter").text()); 
 
@@ -102,8 +109,6 @@ function medsBtn(){
     $("#healthBar").attr("value", healthVal);
     avatarAction = "_makan.gif"
     updateAvatar();
-    avatarAction = "_idle.gif"
-    setInterval(updateAvatar, 3000)
 }
 
 function eatBtn(){
@@ -121,8 +126,6 @@ function eatBtn(){
 
     avatarAction = "_makan.gif"
     updateAvatar();
-    avatarAction = "_idle.gif"
-    setInterval(updateAvatar, 3000)
 }
 
 function sleepBtn(){
@@ -172,9 +175,6 @@ function sleepBtn(){
 
     avatarAction = "_tidur.gif"
     updateAvatar();
-    avatarAction = "_idle.gif"
-    setInterval(updateAvatar, 3000)
-    
 }
 
 function saveInfo(){
@@ -324,6 +324,14 @@ function statsOvertime(){
 
         $("#actions").width(0);
         $("#actions").height(0);
+        
+        $("#avatar").width(0);
+        $("#avatar").height(0);
 
+        $("#levelProgress").width(0);
+        $("#levelProgress").height(0);
+
+        $("#clock").width(0);
+        $("#clock").height(0);
     }
 }

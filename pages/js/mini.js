@@ -201,6 +201,9 @@ window.onload = function(){
   vh = window.innerHeight*0.01;
 
   loadAvatar();
+
+  var music = new Audio('/sources/audio/miniMusic.mp3');
+  music.play();
 }
 
 $(window).resize(function() {

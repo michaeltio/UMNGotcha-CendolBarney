@@ -3,6 +3,8 @@ let avatarCode;
 window.onload = function(){
     $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
     avatarCode = 1;
+    var music = new Audio('/sources/audio/bgMusic.mp3');
+    music.play();
 }
 
 function changeLeft(){
@@ -14,7 +16,7 @@ function changeLeft(){
     switch(avatarCode){
         case 1: $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
             break;
-        case 2: $("#avatarImg").attr("src", "/sources/images/rock/rock_dewasa_idle.gif")
+        case 2: $("#avatarImg").attr("src", "/sources/images/batu/batu_dewasa_idle.gif")
             break;
         case 3: $("#avatarImg").attr("src", "/sources/images/bebek/bebek_dewasa_idle.gif")
             break;
@@ -34,7 +36,7 @@ function changeRight(){
     switch(avatarCode){
         case 1: $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
             break;
-        case 2: $("#avatarImg").attr("src", "/sources/images/rock/rock_dewasa_idle.gif")
+        case 2: $("#avatarImg").attr("src", "/sources/images/batu/batu_dewasa_idle.gif")
             break;
         case 3: $("#avatarImg").attr("src", "/sources/images/bebek/bebek_dewasa_idle.gif")
             break;
@@ -51,6 +53,8 @@ function openNew(){
 
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
+
+    $("#mainTitle").css("visibility", "hidden");
 }
 
 function closeNew(){
@@ -62,6 +66,9 @@ function closeNew(){
     
     $("#errorMsg").css("visibility", "hidden");
     $('#nameInput').val(""); 
+
+    $("#mainTitle").css("visibility", "visible");
+
 }
 
 function openCred(){
@@ -70,6 +77,8 @@ function openCred(){
     
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
+
+    $("#mainTitle").css("visibility", "hidden");
 }
 
 function closeCred(){
@@ -78,6 +87,8 @@ function closeCred(){
     
     $(".menuBtn").width("200px");
     $(".menuBtn").height("75px"); 
+
+    $("#mainTitle").css("visibility", "visible");
 }
 
 function openLoad(){
@@ -86,6 +97,8 @@ function openLoad(){
     
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
+
+    $("#mainTitle").css("visibility", "hidden");
 }
 
 function closeLoad(){
@@ -93,7 +106,9 @@ function closeLoad(){
     $("#popupLoad").height(0);
 
     $(".menuBtn").width("200px");
-    $(".menuBtn").height("75px"); 
+    $(".menuBtn").height("75px");
+    
+    $("#mainTitle").css("visibility", "visible");
 }
 
 function startGame(){
@@ -155,7 +170,7 @@ function sendAvatar(){
     switch(avatarCode){
         case 1: avatarChosen = "/stuart";
             break;
-        case 2: avatarChosen = "/rock";
+        case 2: avatarChosen = "/batu";
             break;
         case 3: avatarChosen = "/bebek";
             break;
