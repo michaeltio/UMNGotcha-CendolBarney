@@ -1,0 +1,53 @@
+#gameArea{
+    height: 60vh;
+    width: 60vw;
+    overflow: hidden;
+}
+#moveArea{
+    height: 20vh;
+    width: 60vw;
+}
+
+#moveBtn{
+    text-align: center;
+}
+
+#object{
+    width: 10vw;
+    height: 10vw;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+#objectImg{
+    width: 10vw;
+    height: 10vw;
+}
+
+#gameTimer{
+    color: white;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+#star{
+    height: 5vw;
+    width: 5vw;
+}
+
+#target{
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+    z-index: -1;
+    top: 280px;
+}
+
+#score{
+    color: white;
+}
+
+#stars{
+    margin-left: 3px;
+}
+

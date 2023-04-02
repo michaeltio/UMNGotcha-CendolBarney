@@ -1,0 +1,104 @@
+
+#stats{
+    overflow: hidden;
+    color: white;
+    height: 20vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#stats table tr td p{
+    text-align: center;
+}
+
+#avatar{
+    height: 50vh;
+    width: 50vw;
+}
+
+#actions{
+    overflow: hidden;
+}
+
+.actionsBtn{
+    margin: 5px 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    transition: 300ms;
+    width: 200px;
+    height: 75px;
+    overflow: hidden;
+    transition: 300ms;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.actionsBtn:hover{
+    width: 215px;
+    font-size: 1.15em;
+}
+
+#avatar{
+    overflow: hidden;
+}
+
+#log{
+    position: absolute;
+    z-index: -1;
+    top: 250px;
+    left: 625px;
+}
+
+#levelProgress{
+    overflow: hidden;
+}
+
+#clock{
+    overflow: hidden;
+}
+
+#avatarImg{
+    width: 30vh;
+    height: 30vh;
+}
+
+#greetText,#name,#levelText,#levelNum, #dayCounterBox{
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7);
+}
+
+#levelNum{
+    height: 20px;
+}
+
+#clock{
+    color: white;
+    text-align: center;
+    padding: 2px;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.stat{
+    overflow: hidden;
+    font-size: 1em;
+}
+
+#eatBar, #sleepBar, #playBar, #healthBar{
+    width: 12vw;
+    text-align: center;
+    margin: 0 5vw;
+}
+
+#dayCounterBox{
+    color: white;
+    width: 100px;
+    justify-content: center;
+}
+
+#dayCounter{
+    margin-left: 6px;
+}

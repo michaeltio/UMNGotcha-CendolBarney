@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'pixelFont';
+    src: url(../../sources/font/PressStart2P-Regular.ttf);
+    }
+
+*{
+    font-family: "pixelFont";
+}
+
+#bgImg{
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
+#bungkus{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainTitle{
+    margin-bottom: 10vh;
+    color: white;
+    text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.window{
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 300ms;
+    text-align: center;
+}
+
+.menuBtn{
+    margin: 5px 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    transition: 300ms;
+    width: 200px;
+    height: 75px;
+    overflow: hidden;
+    transition: 300ms;
+}
+
+.menuBtn:hover{
+    width: 215px;
+    font-size: 1.15em;
+}
+
+.windowBtn{
+    border: none;
+    color: white;
+    background-color: transparent;
+    height: 7vh;
+    width: 20vh;
+    border-radius: 4px;
+    transition: 300ms;
+}
+
+.windowBtn:hover{
+    width: 21vh;
+    height: 8vh;
+    font-size: 1.2em;
+}
+
+.windowContent{
+    overflow: auto;
+    height: 50vh;
+    color:white;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 4px;
+}
+
+.windowContentEx{
+    overflow: auto;
+    height: 50vh;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: gainsboro;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 4px;
+}
+
+#errorMsg{
+    visibility: hidden;
+}
+
+#avatarSelection{
+    height: 25vh;
+}
+
+.avatarNav{
+    border: none;
+    color: white;
+    background-color: transparent;
+}
+
+a{
+    color: white;
+}
+
+#closeNew{
+    margin-right: 10px;
+}
+
+
+#popupNewContent{
+    overflow: hidden;
+}
+
+#popupCredContent{
+    margin: 30px;
+}
+
+@media (min-width:0px) and (max-width: 991px) {
+    #bgImg{
+        width: 991px;
+        height: 100vh;
+    }
+
+    #bungkus{
+        text-align: center;
+        margin: auto;
+    }
+}

@@ -1,14 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import CSS File & Bootstrap-->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/lobby.css"> <!--Import CSS khusus game-lobby.html-->
+    <!--Import Javascript File & Jquery-->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/lobby.js"></script> <!--Import javascript khusus game-lobby.html-->
+
     <title>UMN Gotcha Cendol Barney</title>
 </head>
+
 <body>
-    
+    <img id="bgImg" class="position-absolute" src="/sources/images/backgrounds/bgMorning.png">
+    <div id="bungkus" class="vstack">
+        <div id="stats" class="container mb-3">
+            <table>
+                <tr>
+                    <td>
+                        <div id="eatStat" class="stat">
+                            <p>Hunger</p>
+                            <progress id="eatBar" value="10" max="100"></progress>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="sleepStat" class="stat">
+                            <p>Energy</p>
+                            <progress id="sleepBar" value="10" max="100"></progress>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="playStat" class="stat">
+                            <p>Mood</p>
+                            <progress id="playBar" value="10" max="100"></progress>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div id="healthStat" class="stat">
+                            <p>Health</p>
+                            <progress id="healthBar" value="10" max="100"></progress>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="avatar">
+            <div id="clock" class="position-absolute m-3 hstack">
+                <p id="clockHour" class="my-auto">07</p>
+                <p class="my-auto">:</p>
+                <p id="clockMinute" class="my-auto">00</p>
+            </div>
+            <div id="greetText" class="mt-3">
+                <p> </p>
+            </div>
+            <div id="name">
+                <p>Stuart</p>
+            </div>
+            <div id="dayCounterBox" class="hstack m-3">
+                <p>Day</p>
+                <p id="dayCounter">1</p>
+            </div>
+            <div class="hstack">
+                <img id="log" src="/sources/images/backgrounds/log.png" />
+                <img id="avatarImg" src="" class="m-auto">
+            </div>
+        </div>
+        <div id="levelProgress" class="mt-3 mb-3">
+            <p id="levelText">Level</p>
+            <p id="levelNum">1</p>
+        </div>
+        <div id="actions" class="">
+            <table>
+                <tr>
+                    <td>
+                        <button class="actionsBtn col-6" onclick="eatBtn()">Eat</button>
+                    </td>
+                    <td>
+                        <button class="actionsBtn col-6" onclick="sleepBtn()">Sleep</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="actionsBtn col-6" onclick="minigameBtn()">Play</button>
+                    </td>
+                    <td>
+                        <button class="actionsBtn col-6" onclick="medsBtn()">Meds</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="popupGameOver" class="window">
+            <div class="windowContent">
+                <h2>Oops</h2>
+                <p>You're pet died..</p>
+                <button onclick="homeBtn()" class="windowBtn">Home</button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
