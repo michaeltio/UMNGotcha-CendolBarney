@@ -1,6 +1,14 @@
+let avatarChosen;
+let avatarAge;
+let avatarAction;
+let bgNow;
+
 window.onload = function(){
     var newName = localStorage.getItem("nameGiven");
     $('#name').text(newName);
+
+    var music = new Audio('/sources/audio/bgMusic.mp3');
+    music.play();
 
     var clockHour = $("#clockHour").text();
     var hour = parseInt(clockHour);
@@ -28,6 +36,10 @@ setInterval(timeSystem, 1000);
 
 
 function timeSystem(){
+    if(avatarAction!="_idle.gif"){
+        avatarAction = "_idle.gif";
+        setTimeout(updateAvatar,3000)
+    }
     statsOvertime();
     let days = parseInt($("#dayCounter").text()); 
 
@@ -48,6 +60,14 @@ function timeSystem(){
             let level = parseInt($("#levelNum").text()) ;
             level+=1;
             $("#levelNum").text(level)
+            if(level>9){
+                avatarAge = "_dewasa"
+                updateAvatar()
+            }
+            else if(level>4){
+                avatarAge = "_anak"
+                updateAvatar();
+            }
         }
     }
 
@@ -67,14 +87,26 @@ function timeSystem(){
     
     let greetMsg; 
     
-    if(hour>4 && hour<11)
+    if(hour>4 && hour<11){
         greetMsg = "Good Morning";
-    else if(hour>10 && hour<15)
+        bgNow = "/sources/images/backgrounds/bgMorning.png"
+        $("#bgImg").attr("src", bgNow)
+    }
+    else if(hour>10 && hour<15){
         greetMsg = "Good Afternoon";
-    else if(hour>14 && hour<19)
+        bgNow = "/sources/images/backgrounds/bgAfternoon.png"
+        $("#bgImg").attr("src", bgNow)
+    }
+    else if(hour>14 && hour<19){
         greetMsg = "Good Evening";
-    else
+        bgNow = "/sources/images/backgrounds/bgEvening.png"
+        $("#bgImg").attr("src", bgNow)
+    }
+    else{
         greetMsg = "Good Night";
+        bgNow = "/sources/images/backgrounds/bgNight.png"
+        $("#bgImg").attr("src", bgNow)
+    }
     $("#greetText").text(greetMsg);
 }
 
@@ -88,6 +120,8 @@ function medsBtn(){
     var healthVal = parseFloat($('#healthBar').attr('value'));
     healthVal += 15;
     $("#healthBar").attr("value", healthVal);
+    avatarAction = "_makan.gif"
+    updateAvatar();
 }
 
 function eatBtn(){
@@ -102,6 +136,9 @@ function eatBtn(){
     var playVal = parseFloat($('#playBar').attr('value')); 
     playVal -= 15;
     $("#playBar").attr("value", playVal);
+
+    avatarAction = "_makan.gif"
+    updateAvatar();
 }
 
 function sleepBtn(){
@@ -118,7 +155,15 @@ function sleepBtn(){
         if(days%5==0){
             let level = parseInt($("#levelNum").text()) ;
             level+=1;
-            $("#levelNum").text(level)
+            $("#levelNum").text(level);
+            if(level>9){
+                avatarAge = "_dewasa"
+                updateAvatar()
+            }
+            else if(level>4){
+                avatarAge = "_anak"
+                updateAvatar();
+            }
         }
     }
     
@@ -140,6 +185,9 @@ function sleepBtn(){
     var playVal = parseFloat($('#playBar').attr('value')); 
     playVal -= 15;
     $("#playBar").attr("value", playVal);
+
+    avatarAction = "_tidur.gif"
+    updateAvatar();
 }
 
 function saveInfo(){
@@ -152,39 +200,33 @@ function saveInfo(){
     localStorage.setItem("curr-Sleep", currSleep);
     localStorage.setItem("curr-Play", currPlay);
     localStorage.setItem("curr-Health", currHealth);
-
+    
     currMinute = $("#clockMinute").text();
     currHour = $("#clockHour").text();
-
+    
     localStorage.setItem("curr-Minute", currMinute);
     localStorage.setItem("curr-Hour", currHour);
-
+    
     let days = parseInt($("#dayCounter").text()); 
     localStorage.setItem("curr-Days", days);
-
+    
     let level = parseInt($("#levelNum").text()); 
     localStorage.setItem("curr-Level", level);
+    
+    localStorage.setItem("avatar-Age", avatarAge);
+    localStorage.setItem("bg-Now", bgNow);
 }
 
+
 function loadAvatar(){
-    avatarCode = localStorage.getItem("avatar-Code");
-    avatarCode = parseInt(avatarCode);
-    tesDir= "stuart/"
-    tesFile= "Stuart_"
-    tesAct = ""
-    switch(avatarCode){
-        case 1:  tesAct = "Idle.gif"
-        break;
-        case 2:  tesAct = "Kunyah.gif"
-        break;
-        case 3: tesAct = "Tidur.gif"
-        break;
-        case 4:  tesAct = "Jalan_Depan.gif"
-        break;
-        case 5:  tesAct = "Jalan_Kiri.gif"
-        break;
-    }
-    sourceImg = "/sources/images/" + tesDir + tesFile + tesAct;
+    avatarChosen = localStorage.getItem("avatar-Chosen");
+    avatarAge = "_bayi"
+    avatarAction = "_idle.gif"
+    updateAvatar();
+}
+
+function updateAvatar(){
+    sourceImg = "/sources/images" + avatarChosen + avatarChosen + avatarAge + avatarAction;
     $("#avatarImg").attr("src", sourceImg)
 }
 
@@ -297,6 +339,14 @@ function statsOvertime(){
 
         $("#actions").width(0);
         $("#actions").height(0);
+        
+        $("#avatar").width(0);
+        $("#avatar").height(0);
 
+        $("#levelProgress").width(0);
+        $("#levelProgress").height(0);
+
+        $("#clock").width(0);
+        $("#clock").height(0);
     }
 }

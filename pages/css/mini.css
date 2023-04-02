@@ -1,11 +1,9 @@
 #gameArea{
-    border: 1px solid black;
     height: 60vh;
     width: 60vw;
     overflow: hidden;
 }
 #moveArea{
-    border: 1px solid black;
     height: 20vh;
     width: 60vw;
 }
@@ -15,7 +13,6 @@
 }
 
 #object{
-    background-color: black;
     width: 10vw;
     height: 10vw;
     position: relative;
@@ -23,13 +20,22 @@
     top: 0;
 }
 
+#objectImg{
+    width: 10vw;
+    height: 10vw;
+}
+
 #gameTimer{
     color: white;
     text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
+#star{
+    height: 5vw;
+    width: 5vw;
+}
+
 #target{
-    background-color: white;
     width: 5vw;
     height: 5vw;
     position: relative;

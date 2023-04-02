@@ -58,10 +58,10 @@
 
 .windowBtn{
     border: none;
-    background-color: gainsboro;
+    color: white;
+    background-color: transparent;
     height: 7vh;
     width: 20vh;
-    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     transition: 300ms;
 }
@@ -75,8 +75,7 @@
 .windowContent{
     overflow: auto;
     height: 50vh;
-    box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
-    background-color: gainsboro;
+    color:white;
     padding: 30px;
     margin: 30px;
     border-radius: 4px;
@@ -102,7 +101,12 @@
 
 .avatarNav{
     border: none;
-    background-color: gainsboro;
+    color: white;
+    background-color: transparent;
+}
+
+a{
+    color: white;
 }
 
 #closeNew{

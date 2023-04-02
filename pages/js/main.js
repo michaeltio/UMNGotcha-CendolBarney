@@ -1,8 +1,10 @@
 let avatarCode;
 
 window.onload = function(){
-    $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+    $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
     avatarCode = 1;
+    var music = new Audio('/sources/audio/bgMusic.mp3');
+    music.play();
 }
 
 function changeLeft(){
@@ -12,15 +14,15 @@ function changeLeft(){
     }
 
     switch(avatarCode){
-        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
             break;
-        case 2: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Kunyah.gif")
+        case 2: $("#avatarImg").attr("src", "/sources/images/batu/batu_dewasa_idle.gif")
             break;
-        case 3: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Tidur.gif")
+        case 3: $("#avatarImg").attr("src", "/sources/images/bebek/bebek_dewasa_idle.gif")
             break;
-        case 4: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Depan.gif")
+        case 4: $("#avatarImg").attr("src", "/sources/images/slime/slime_dewasa_idle.gif")
             break;
-        case 5: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Kiri.gif")
+        case 5: $("#avatarImg").attr("src", "/sources/images/masbro/masbro_dewasa_idle.gif")
             break;
     }
 }
@@ -32,15 +34,15 @@ function changeRight(){
     }
     
     switch(avatarCode){
-        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Idle.gif")
+        case 1: $("#avatarImg").attr("src", "/sources/images/stuart/stuart_dewasa_idle.gif")
             break;
-        case 2: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Kunyah.gif")
+        case 2: $("#avatarImg").attr("src", "/sources/images/batu/batu_dewasa_idle.gif")
             break;
-        case 3: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Tidur.gif")
+        case 3: $("#avatarImg").attr("src", "/sources/images/bebek/bebek_dewasa_idle.gif")
             break;
-        case 4: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Depan.gif")
+        case 4: $("#avatarImg").attr("src", "/sources/images/slime/slime_dewasa_idle.gif")
             break;
-        case 5: $("#avatarImg").attr("src", "/sources/images/stuart/Stuart_Jalan_Kiri.gif")
+        case 5: $("#avatarImg").attr("src", "/sources/images/masbro/masbro_dewasa_idle.gif")
             break;
     }
 }
@@ -51,6 +53,8 @@ function openNew(){
 
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
+
+    $("#mainTitle").css("visibility", "hidden");
 }
 
 function closeNew(){
@@ -62,6 +66,9 @@ function closeNew(){
     
     $("#errorMsg").css("visibility", "hidden");
     $('#nameInput').val(""); 
+
+    $("#mainTitle").css("visibility", "visible");
+
 }
 
 function openCred(){
@@ -70,6 +77,8 @@ function openCred(){
     
     $(".menuBtn").width(0);
     $(".menuBtn").height(0);
+
+    $("#mainTitle").css("visibility", "hidden");
 }
 
 function closeCred(){
@@ -78,22 +87,8 @@ function closeCred(){
     
     $(".menuBtn").width("200px");
     $(".menuBtn").height("75px"); 
-}
 
-function openLoad(){
-    $("#popupLoad").width("60vh");
-    $("#popupLoad").height("70vh");
-    
-    $(".menuBtn").width(0);
-    $(".menuBtn").height(0);
-}
-
-function closeLoad(){
-    $("#popupLoad").width(0);
-    $("#popupLoad").height(0);
-
-    $(".menuBtn").width("200px");
-    $(".menuBtn").height("75px"); 
+    $("#mainTitle").css("visibility", "visible");
 }
 
 function startGame(){
@@ -104,7 +99,7 @@ function startGame(){
         $("#errorMsg").css("visibility", "hidden");
 
         resetStats();
-        sendAvatarCode();
+        sendAvatar();
         window.location.href = "game-lobby.html";
     }
     else{
@@ -148,8 +143,23 @@ function resetStats(){
 
     localStorage.setItem("curr-Days", "1");
     localStorage.setItem("curr-Level", "1");
+
+    localStorage.setItem("bg-Now", "/sources/images/backgrounds/bgMorning.png");
 }
 
-function sendAvatarCode(){
-    localStorage.setItem("avatar-Code", avatarCode);
+function sendAvatar(){
+    let avatarChosen
+    switch(avatarCode){
+        case 1: avatarChosen = "/stuart";
+            break;
+        case 2: avatarChosen = "/batu";
+            break;
+        case 3: avatarChosen = "/bebek";
+            break;
+        case 4: avatarChosen = "/slime";
+            break;
+        case 5: avatarChosen = "/masbro";
+            break;
+    }
+    localStorage.setItem("avatar-Chosen", avatarChosen);
 }
