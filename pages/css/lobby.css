@@ -45,13 +45,6 @@
     overflow: hidden;
 }
 
-#log{
-    position: absolute;
-    z-index: -1;
-    top: 250px;
-    left: 625px;
-}
-
 #levelProgress{
     overflow: hidden;
 }
